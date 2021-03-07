@@ -3,3 +3,249 @@ html, body { height: 100%; margin: 0; }
  body { background: black; flex-direction: column; display: flex; align-items: center; justify-content: center; overflow: hidden; }
 /*Делаем границу вокруг игрового поля*/ 
 canvas { border: 1px solid white;margin-top: 25px; z-index: 10000; overflow: hidden; background-color: black;}
+
+
+
+.board {
+    color: white;
+    border: 1px solid white;
+    width: 240px;
+    position: absolute;
+    top:25px;
+    left: 210px;
+    z-index: 10000;
+   
+}
+button {
+    background-color: white;
+    border: none;
+    height: 50px;
+    width: 150px;
+    font-size: 36px;
+    font-weight: 600;
+}
+
+.round {
+    position: absolute;
+    width: 500px;
+    height: 300px;
+    background-color: rgb(1, 87, 1);
+    border-bottom-left-radius: 250px;
+    border-bottom-right-radius: 250px;
+    left: -347px;
+    top: 71px;
+}
+
+.ball {
+    position: relative;
+    width: 354px;
+    height: 300px;
+    background-color: black;
+    border-bottom-left-radius: 250px;
+    border-bottom-right-radius: 250px;
+    top: -66px;
+    left: 73px;
+}
+
+.round-2 {
+    transform: rotateX(180deg);
+    position: absolute;
+    width: 500px;
+    height: 300px;
+    background-color: rgb(1, 87, 1);
+    border-bottom-left-radius: 250px;
+    border-bottom-right-radius: 250px;
+    left: 80px;
+    top: -166px;
+}
+.ball-2 {
+    /* transform: rotateX(180deg); */
+    position: relative;
+    width: 354px;
+    height: 300px;
+    background-color: black;
+    border-bottom-left-radius: 250px;
+    border-bottom-right-radius: 250px;
+    top: -66px;
+    left: 73px;
+}
+
+
+.round-3 {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    width: 400px;
+    height: 300px;
+    background-color: rgb(1, 87, 1);
+    border-bottom-left-radius: 250px;
+    border-bottom-right-radius: 250px;
+    left: 180px;
+    top: 88px;
+}
+.ball-3 {
+
+            position: relative;
+            width: 258px;
+            height: 221px;
+            background-color: black;
+            border-bottom-left-radius: 250px;
+            border-bottom-right-radius: 250px;
+            top: -39px;
+            left: 69px;
+}
+
+
+.square {
+    position: absolute;
+    width: 69px;
+    height: 300px;
+    background-color: rgb(1, 87, 1);
+    left: 180px;
+    top: -211px;
+}
+.square-black {
+    position: absolute;
+    width: 213px;
+    height: 385px;
+    background-color: black;
+    left: 180px;
+    top: 3px;
+}
+
+.round-4 {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    width: 387px;
+    height: 229px;
+    background-color: rgb(1, 87, 1);
+    border-bottom-left-radius: 250px;
+    border-bottom-right-radius: 250px;
+    left: 92px;
+    top: 391px;
+    transform: rotate(
+88deg
+);
+}
+.ball-4 {
+    position: relative;
+    width: 233px;
+    height: 152px;
+    background-color: black;
+    border-bottom-left-radius: 250px;
+    border-bottom-right-radius: 250px;
+    top: -53px;
+    left: 78px;
+}
+
+
+
+
+.round-5 {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    width: 381px;
+    height: 217px;
+    background-color: rgb(1, 87, 1);
+    border-bottom-left-radius: 250px;
+    border-bottom-right-radius: 250px;
+    left: 282px;
+    top: 378px;
+    transform: rotate( 
+258deg
+ );
+}
+.ball-5 {
+    position: relative;
+    width: 231px;
+    height: 139px;
+    background-color: black;
+    border-bottom-left-radius: 250px;
+    border-bottom-right-radius: 250px;
+    top: -40px;
+    left: 78px;
+}
+
+
+.line {
+    position: absolute;
+    left: 272px;
+    top: 48px;
+    height: 80px;
+    width: 1500px;
+    background-color: rgb(1, 87, 1);
+    transform: rotate(
+-45deg
+);
+}
+
+.line-2 {
+    position: absolute;
+    right: -1300px;
+    top: 50px;
+    height: 60px;
+    width: 1400px;
+    background-color: rgb(1, 87, 1);
+    transform: rotate( 
+-22deg
+ );
+}
+
+.face {
+    position: absolute;
+    right: 45px;
+    border-bottom-left-radius: 100px;
+    border-bottom-right-radius: 40px;
+    border-top-right-radius: 70px;
+    top:300px;
+    background-color: rgb(1, 87, 1);
+    width: 250px;
+    height: 150px;
+    transform: rotate( 
+-22deg
+ );
+}
+.face::after {
+    content: '?!';
+    position: absolute;
+    color: red;
+    font-size: 150px;
+    transform: rotate(35deg);
+    top: -170px;
+    left: 50px;
+}
+
+.face .eyes {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 15px;
+    left: 85px;
+    background-color: white;
+    border-radius: 100%;
+
+}
+
+.face .eyes .mini-eyes {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    background-color: black;
+    border-radius: 100%;
+
+}
+
+.lips {
+    position: absolute;
+    height: 70px;
+    width: 20px;
+    background-color: black;
+    transform: rotate(-45deg);
+    top:20px;
+
+}
