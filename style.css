@@ -1,0 +1,5 @@
+html, body { height: 100%; margin: 0; }
+ /*Задаём глобальные параметры*/ 
+ body { background: black; flex-direction: column; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+/*Делаем границу вокруг игрового поля*/ 
+canvas { border: 1px solid white;margin-top: 25px; z-index: 10000; overflow: hidden; background-color: black;}
