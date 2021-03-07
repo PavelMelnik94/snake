@@ -127,6 +127,7 @@ function loop() {
            // Если такие клетки есть — начинаем игру заново 
            if (cell.x === snake.cells[i].x && cell.y === snake.cells[i].y) {
                // Задаём стартовые параметры основным переменным 
+               
                snake.x = 160;
                snake.y = 160;
                snake.cells = [];
@@ -137,6 +138,7 @@ function loop() {
                // Ставим яблочко в случайное место 
                apple.x = getRandomInt(0, 25) * grid;
                apple.y = getRandomInt(0, 25) * grid;
+               
            }
        }
    });
@@ -202,6 +204,7 @@ const play = document.getElementById('play');
 
     play.addEventListener('click', () => {
         localStorage.setItem('score', 0);
+        count = 0;
         requestAnimationFrame(loop);
     });
 
