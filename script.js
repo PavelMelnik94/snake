@@ -1,3 +1,4 @@
+   let appleCount = 0;
    //поле
    const canvas = document.getElementById('game'),
 
@@ -107,10 +108,13 @@ function loop() {
 
        // Если змейка добралась до яблока...
        if (cell.x === apple.x && cell.y === apple.y) {
-
+        
            // увеличиваем длину змейки
            snake.maxCells++;
-
+           appleCount++;
+           localStorage.setItem('score', appleCount);
+           localStorage.setItem('best', appleCount);
+           score.innerHTML = `SCORE: ${localStorage.getItem('score')}`;
            // Рисуем новое яблочко
            // Помним, что размер холста у нас 400x400, при этом он разбит на ячейки — 25 в каждую сторону
            apple.x = getRandomInt(0, 25) * grid;
@@ -129,12 +133,15 @@ function loop() {
                snake.maxCells = 4;
                snake.dx = grid;
                snake.dy = 0;
+               appleCount = 0;
                // Ставим яблочко в случайное место 
                apple.x = getRandomInt(0, 25) * grid;
                apple.y = getRandomInt(0, 25) * grid;
            }
        }
    });
+
+
 }
 
 
@@ -179,5 +186,26 @@ document.addEventListener('keydown', function (e) {
 
 
 
-
 // дорабатываю
+
+// const board = document.querySelector('.board');
+// var score = document.createElement('h1');
+// score.innerHTML = `SCORE: ${localStorage.getItem('score')}`;
+// board.prepend(score);
+let score = document.getElementById('score');
+score.innerHTML = `SCORE: ${localStorage.getItem('score')}`;
+
+let best = document.getElementById('best');
+best.innerHTML = `BEST: ${localStorage.getItem('best')}`;
+
+const play = document.getElementById('play');
+
+    play.addEventListener('click', () => {
+        localStorage.setItem('score', 0);
+        requestAnimationFrame(loop);
+    });
+
+    // localStorage.setItem('best', appleCount);
+    // if (localStorage.best < appleCount) {
+    //     localStorage.setItem('best', appleCount);
+    // }
